@@ -2,8 +2,6 @@ package com.mj.HttpClient;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by majun on 15/9/15.
  */
