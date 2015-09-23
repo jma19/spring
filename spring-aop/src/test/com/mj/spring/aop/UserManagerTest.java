@@ -45,4 +45,11 @@ public class UserManagerTest {
         UserManager userManager = (UserManager) applicationContext.getBean("userManager");
         userManager.getUser();
     }
+
+    @Test
+    public void should_apply_around_advice_and_before_advice_and_after_advice_after_return_advice() throws Exception{
+        UserManager userManager = (UserManager) applicationContext.getBean("userManager");
+        userManager.getUser();
+    }
+
 }

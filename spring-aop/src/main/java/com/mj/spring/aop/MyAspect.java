@@ -1,6 +1,7 @@
 package com.mj.spring.aop;
 
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 /*
@@ -43,5 +44,15 @@ public class MyAspect {
     public void afterThrowingAdvice(Exception e) {
         System.out.println("after throwing advice is executed!exception msg is : " + e.getMessage());
     }
+
+    //定义around advice
+    @Around(value="execution(public String com.mj.spring.aop.UserManager.getUser(..))")
+    public void aroundSayHello(ProceedingJoinPoint joinPoint) throws Throwable{
+        System.out.println("Around Before !! ");
+        joinPoint.proceed();
+        System.out.println("Around After !! ");
+    }
+
+
 
 }
