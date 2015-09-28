@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:aop="http://www.springframework.org/schema/aop"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
 			http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 			http://www.springframework.org/schema/aop
-			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
     <!-- 使能AOP-->
     <aop:aspectj-autoproxy/>
-
-    <!-- 声明一个切面-->
-    <bean id="myAspect" class="com.mj.spring.aop.MyAspect"></bean>
-    <bean id="userManager" class="com.mj.spring.aop.UserManager"></bean>
+    <!-- 自动装载bean使能-->
+    <context:component-scan base-package="com.mj.spring.aop"/>
+    <context:annotation-config/>
 
 </beans>
